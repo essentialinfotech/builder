@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Infinite Marquee</title>
+<style>
+    .marquee-container {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .marquee-content {
+        display: inline-block;
+        white-space: nowrap; /* Prevent line breaks */
+        animation: marquee 10s linear infinite; /* Adjust duration and timing function as needed */
+        position: relative;
+    }
+
+    p{
+        font-size: 100px;
+        font-weight: 800;
+        text-transform: uppercase;
+        
+    }
+    p.first{
+        color: transparent;
+        white-space: nowrap;
+        -webkit-text-stroke: 2px #000;
+        position: absolute;
+    }
+    p.second{
+        color: #fa2d2d;
+        /* position: absolute; */
+    }
+
+    @keyframes marquee {
+        0% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(-100%); /* Move the content completely out of the viewport */
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <p class="first">This is a sample text for the infinite marquee.</p>
+            <p class="second">This is a sample text for the infinite marquee.</p>
+            <!-- Add more content here if needed -->
+        </div>
+    </div>
+</body>
+</html>
